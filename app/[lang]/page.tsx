@@ -1,14 +1,30 @@
-import NameGeneratorForm from './components/NameGeneratorForm';
+'use client'
 
-export default function Home() {
+import { useState, useEffect } from 'react'
+import NameGeneratorForm from '../components/NameGeneratorForm'
+
+interface Props {
+  params: { lang: string }
+}
+
+export default function Home({ params: { lang } }: Props) {
+  const [messages, setMessages] = useState<any>(null)
+
+  // 在组件挂载时加载语言文件
+  useEffect(() => {
+    import(`@/app/i18n/locales/${lang}.json`).then((m) => setMessages(m.default))
+  }, [lang])
+
+  if (!messages) return null
+
   return (
     <main className="py-12">
       <header className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-deep-blue mb-3">
-          Ship Name Generator
+          {messages.home.title}
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Create the perfect name for your vessel by combining your names and selecting a style.
+          {messages.home.subtitle}
         </p>
       </header>
 
@@ -17,7 +33,7 @@ export default function Home() {
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6 md:p-8">
               <h2 className="text-2xl font-semibold text-deep-blue mb-4">
-                How It Works
+                {messages.home.howItWorks}
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -25,9 +41,9 @@ export default function Home() {
                     1
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-800">Enter Your Names</h3>
+                    <h3 className="text-lg font-medium text-gray-800">{messages.home.step1Title}</h3>
                     <p className="text-gray-600">
-                      Input both of your names in the fields below to personalize your ship name.
+                      {messages.home.step1Description}
                     </p>
                   </div>
                 </div>
@@ -36,9 +52,9 @@ export default function Home() {
                     2
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-800">Select a Style</h3>
+                    <h3 className="text-lg font-medium text-gray-800">{messages.home.step2Title}</h3>
                     <p className="text-gray-600">
-                      Choose from our selection of themed styles to match your preferences.
+                      {messages.home.step2Description}
                     </p>
                   </div>
                 </div>
@@ -47,9 +63,9 @@ export default function Home() {
                     3
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg font-medium text-gray-800">Generate Your Ship Name</h3>
+                    <h3 className="text-lg font-medium text-gray-800">{messages.home.step3Title}</h3>
                     <p className="text-gray-600">
-                      Click the button and our AI will create the perfect name for your vessel.
+                      {messages.home.step3Description}
                     </p>
                   </div>
                 </div>
@@ -57,7 +73,7 @@ export default function Home() {
             </div>
           </div>
           
-          <NameGeneratorForm />
+          <NameGeneratorForm lang={lang} messages={messages} />
           
         </div>
       </section>

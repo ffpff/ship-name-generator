@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "선박 이름 생성기 - 완벽한 배 이름 만들기",
+    "description": "우리의 스마트 선박 이름 생성기를 사용하여 귀하의 배를 위한 독특하고 의미 있는 이름을 만드세요. 로맨틱, 모험, 럭셔리 등 다양한 스타일을 지원합니다."
+  },
+  "home": {
+    "title": "선박 이름 생성기",
+    "subtitle": "당신의 배를 위한 완벽한 이름 만들기",
+    "firstNameLabel": "첫 번째 이름",
+    "firstNamePlaceholder": "첫 번째 이름 입력",
+    "secondNameLabel": "두 번째 이름",
+    "secondNamePlaceholder": "두 번째 이름 입력",
+    "shipTypeLabel": "선박 유형",
+    "shipTypePlaceholder": "선박 유형 선택",
+    "styleLabel": "스타일",
+    "stylePlaceholder": "스타일 선택",
+    "generateButton": "이름 생성",
+    "resultTitle": "생성된 이름",
+    "loading": "생성 중...",
+    "error": "오류가 발생했습니다. 다시 시도해주세요"
+  },
+  "shipTypes": {
+    "yacht": "요트",
+    "sailboat": "범선",
+    "fishingBoat": "어선",
+    "cruiseShip": "크루즈선",
+    "cargoShip": "화물선",
+    "speedboat": "스피드보트"
+  },
+  "styles": {
+    "romantic": "로맨틱",
+    "adventure": "모험",
+    "luxury": "럭셔리",
+    "nautical": "해양",
+    "humorous": "유머",
+    "mythology": "신화",
+    "nature": "자연",
+    "vintage": "빈티지",
+    "coastal": "해안",
+    "patriotic": "애국"
+  }
+} 

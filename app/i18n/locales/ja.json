@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "title": "船名ジェネレーター - 完璧な船名を作成",
+    "description": "当社のスマート船名ジェネレーターを使用して、あなたの船のためのユニークで意味のある名前を作成します。ロマンチック、アドベンチャー、ラグジュアリーなど、さまざまなスタイルに対応。"
+  },
+  "home": {
+    "title": "船名ジェネレーター",
+    "subtitle": "あなたの船のための完璧な名前を作成",
+    "firstNameLabel": "最初の名前",
+    "firstNamePlaceholder": "最初の名前を入力",
+    "secondNameLabel": "二番目の名前",
+    "secondNamePlaceholder": "二番目の名前を入力",
+    "shipTypeLabel": "船舶タイプ",
+    "shipTypePlaceholder": "船舶タイプを選択",
+    "styleLabel": "スタイル",
+    "stylePlaceholder": "スタイルを選択",
+    "generateButton": "名前を生成",
+    "resultTitle": "生成された名前",
+    "loading": "生成中...",
+    "error": "エラーが発生しました。もう一度お試しください"
+  },
+  "shipTypes": {
+    "yacht": "ヨット",
+    "sailboat": "帆船",
+    "fishingBoat": "漁船",
+    "cruiseShip": "クルーズ船",
+    "cargoShip": "貨物船",
+    "speedboat": "スピードボート"
+  },
+  "styles": {
+    "romantic": "ロマンチック",
+    "adventure": "アドベンチャー",
+    "luxury": "ラグジュアリー",
+    "nautical": "マリン",
+    "humorous": "ユーモア",
+    "mythology": "神話",
+    "nature": "自然",
+    "vintage": "ビンテージ",
+    "coastal": "コースタル",
+    "patriotic": "愛国"
+  }
+} 

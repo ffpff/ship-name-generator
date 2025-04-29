@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "Ship Name Generator - Create Perfect Names for Your Vessel",
+    "description": "Generate unique and meaningful names for your vessel using our smart ship name generator. Supporting various styles including romantic, adventure, luxury, and more."
+  },
+  "home": {
+    "title": "Ship Name Generator",
+    "subtitle": "Create the Perfect Name for Your Vessel",
+    "howItWorks": "How It Works",
+    "step1Title": "Enter Names",
+    "step1Description": "Input two names in the fields below to personalize your ship name.",
+    "step2Title": "Choose Style",
+    "step2Description": "Select from our themed styles to match your preferences.",
+    "step3Title": "Generate Names",
+    "step3Description": "Click the button and our AI will create the perfect name for your vessel.",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "e.g., Ocean",
+    "secondNameLabel": "Second Name",
+    "secondNamePlaceholder": "e.g., Star",
+    "shipTypeLabel": "Vessel Type",
+    "shipTypePlaceholder": "Select vessel type",
+    "styleLabel": "Style",
+    "stylePlaceholder": "Select style",
+    "generateButton": "Generate Names",
+    "generateMoreButton": "Generate More Names",
+    "resultTitle": "Generated Names",
+    "resultDescription": "Click a name to select it. Not quite right? Keep generating until you find the perfect one!",
+    "loading": "Generating...",
+    "error": "An error occurred while generating names. Please try again.",
+    "exampleTitle": "Example Names",
+    "exampleDescription": "Here are some examples of generated names:"
+  },
+  "shipTypes": {
+    "yacht": "Yacht",
+    "sailboat": "Sailboat",
+    "fishingBoat": "Fishing Boat",
+    "cruiseShip": "Cruise Ship",
+    "cargoShip": "Cargo Ship",
+    "speedboat": "Speedboat"
+  },
+  "styles": {
+    "romantic": "Romantic",
+    "adventure": "Adventure",
+    "luxury": "Luxury",
+    "nautical": "Nautical",
+    "humorous": "Humorous",
+    "mythology": "Mythology",
+    "nature": "Nature",
+    "vintage": "Vintage",
+    "coastal": "Coastal",
+    "patriotic": "Patriotic"
+  }
+} 

@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "title": "船名生成器 - 为您的船只创建完美的名字",
+    "description": "使用我们的智能船名生成器，为您的船只创建独特而有意义的名字。支持多种风格，包括浪漫、冒险、豪华等。"
+  },
+  "home": {
+    "title": "船名生成器",
+    "subtitle": "为您的船只创建完美的名字",
+    "howItWorks": "使用说明",
+    "step1Title": "输入名字",
+    "step1Description": "在下方输入框中输入两个名字，用于个性化您的船名。",
+    "step2Title": "选择风格",
+    "step2Description": "从我们提供的主题风格中选择您喜欢的类型。",
+    "step3Title": "生成船名",
+    "step3Description": "点击按钮，我们的AI将为您的船只创建完美的名字。",
+    "firstNameLabel": "第一个名字",
+    "firstNamePlaceholder": "例如：海洋",
+    "secondNameLabel": "第二个名字",
+    "secondNamePlaceholder": "例如：之星",
+    "shipTypeLabel": "船只类型",
+    "shipTypePlaceholder": "选择船只类型",
+    "styleLabel": "风格",
+    "stylePlaceholder": "选择风格",
+    "generateButton": "生成名字",
+    "generateMoreButton": "生成更多名字",
+    "resultTitle": "为您生成的船名",
+    "resultDescription": "点击名字即可选择。不满意？继续生成直到找到完美的名字！",
+    "loading": "正在生成...",
+    "error": "生成过程中出现错误，请重试",
+    "exampleTitle": "示例船名",
+    "exampleDescription": "以下是一些生成的名字示例："
+  },
+  "shipTypes": {
+    "yacht": "游艇",
+    "sailboat": "帆船",
+    "fishingBoat": "渔船",
+    "cruiseShip": "邮轮",
+    "cargoShip": "货船",
+    "speedboat": "快艇"
+  },
+  "styles": {
+    "romantic": "浪漫",
+    "adventure": "冒险",
+    "luxury": "豪华",
+    "nautical": "航海",
+    "humorous": "幽默",
+    "mythology": "神话",
+    "nature": "自然",
+    "vintage": "复古",
+    "coastal": "海岸",
+    "patriotic": "爱国"
+  }
+} 

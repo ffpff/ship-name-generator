@@ -46,7 +46,12 @@ const STYLE_OPTIONS = [
   { id: 'patriotic', label: 'Patriotic', description: 'Proud American-themed vessel names' },
 ];
 
-export default function NameGeneratorForm() {
+interface Props {
+  lang: string;
+  messages: any;
+}
+
+export default function NameGeneratorForm({ lang, messages }: Props) {
   const [firstName, setFirstName] = useState('');
   const [secondName, setSecondName] = useState('');
   const [selectedStyle, setSelectedStyle] = useState('romantic');
@@ -92,20 +97,21 @@ export default function NameGeneratorForm() {
           firstName,
           secondName,
           style: selectedStyle,
-          shipType: selectedShipType === 'custom' ? customShipType : selectedShipType
+          shipType: selectedShipType === 'custom' ? customShipType : selectedShipType,
+          language: lang
         }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Error generating ship names');
+        throw new Error(messages.home.error);
       }
 
       setGeneratedNames(data.names);
       setSelectedNameIndex(0); // Select the first name by default
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.');
+      setError(err instanceof Error ? err.message : messages.home.error);
       console.error('Error:', err);
     } finally {
       clearInterval(messageInterval);
@@ -156,7 +162,7 @@ export default function NameGeneratorForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-              First Person's Name
+              {messages.home.firstNameLabel}
             </label>
             <input
               id="firstName"
@@ -164,14 +170,14 @@ export default function NameGeneratorForm() {
               className="input-field"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              placeholder="e.g., John"
+              placeholder={messages.home.firstNamePlaceholder}
               required
               disabled={isLoading}
             />
           </div>
           <div>
             <label htmlFor="secondName" className="block text-sm font-medium text-gray-700 mb-1">
-              Second Person's Name
+              {messages.home.secondNameLabel}
             </label>
             <input
               id="secondName"
@@ -179,7 +185,7 @@ export default function NameGeneratorForm() {
               className="input-field"
               value={secondName}
               onChange={(e) => setSecondName(e.target.value)}
-              placeholder="e.g., Sarah"
+              placeholder={messages.home.secondNamePlaceholder}
               required
               disabled={isLoading}
             />
@@ -188,7 +194,7 @@ export default function NameGeneratorForm() {
 
         <div>
           <label htmlFor="shipType" className="block text-sm font-medium text-gray-700 mb-1">
-            Vessel Type
+            {messages.home.shipTypeLabel}
           </label>
           <div className="space-y-3">
             <select
@@ -198,6 +204,7 @@ export default function NameGeneratorForm() {
               onChange={(e) => setSelectedShipType(e.target.value)}
               disabled={isLoading}
             >
+              <option value="">{messages.home.shipTypePlaceholder}</option>
               {SHIP_TYPES.map((type) => (
                 <option key={type.value} value={type.value}>
                   {type.label} - {type.description}
@@ -227,7 +234,7 @@ export default function NameGeneratorForm() {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Select Ship Name Style
+            {messages.home.styleLabel}
           </label>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {STYLE_OPTIONS.map((style) => (
@@ -269,7 +276,7 @@ export default function NameGeneratorForm() {
             }`}
             disabled={isLoading || !firstName || !secondName || (selectedShipType === 'custom' && !customShipType)}
           >
-            {isLoading ? loadingMessage || 'Generating...' : 'Generate Ship Names'}
+            {isLoading ? loadingMessage || messages.home.loading : messages.home.generateButton}
           </button>
         </div>
       </form>
@@ -292,8 +299,8 @@ export default function NameGeneratorForm() {
       {!generatedNames.length && !error && !isLoading && (
         <div className="mt-8">
           <div className="text-center mb-6">
-            <h3 className="text-lg font-medium text-gray-700 mb-2">Example Ship Names</h3>
-            <p className="text-sm text-gray-500">Here are some examples of generated names:</p>
+            <h3 className="text-lg font-medium text-gray-700 mb-2">{messages.home.exampleTitle}</h3>
+            <p className="text-sm text-gray-500">{messages.home.exampleDescription}</p>
           </div>
           {renderNamesList(EXAMPLE_NAMES, true)}
         </div>
@@ -301,7 +308,7 @@ export default function NameGeneratorForm() {
 
       {generatedNames.length > 0 && !error && (
         <div className="mt-8">
-          <h3 className="text-lg font-medium text-gray-700 mb-4 text-center">Your Perfect Ship Names:</h3>
+          <h3 className="text-lg font-medium text-gray-700 mb-4 text-center">{messages.home.resultTitle}</h3>
           {renderNamesList(generatedNames)}
           <div className="mt-6 text-center">
             <button
@@ -309,11 +316,11 @@ export default function NameGeneratorForm() {
               className="btn-secondary px-6 py-2"
               onClick={handleSubmit}
             >
-              Generate More Names
+              {messages.home.generateMoreButton}
             </button>
           </div>
           <p className="mt-4 text-sm text-gray-500 text-center">
-            Click on a name to select it. Not quite right? Generate more names until you find the perfect one!
+            {messages.home.resultDescription}
           </p>
         </div>
       )}
