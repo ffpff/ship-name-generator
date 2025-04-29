@@ -62,7 +62,7 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [loadingMessage, setLoadingMessage] = useState('');
-  const [showExamples, setShowExamples] = useState(false);
+  const [setShowExamples] = useState(false);
 
   const loadingMessages = [
     "Setting sail...",
