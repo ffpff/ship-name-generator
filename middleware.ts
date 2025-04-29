@@ -32,9 +32,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // 跳过所有内部路径 (_next)
-    '/((?!_next).*)',
-    // 可选: 跳过指定的路径
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    // 只匹配需要国际化的页面路径
+    '/((?!api|_next|favicon.ico).*)',
   ],
 } 
