@@ -53,9 +53,6 @@ export default function RootLayout({ children, params: { lang } }: Props) {
                   </p>
                 </div>
                 <div className="mt-4 md:mt-0">
-                  <p className="text-sm text-gray-500">
-                    Contact: <a href="mailto:contact@shipnamegenerator.com" className="text-ocean-blue hover:underline">contact@shipnamegenerator.com</a>
-                  </p>
                   <p className="text-sm text-gray-500 mt-1">
                     123 Harbor Way, Coastal City, CA 90210, USA
                   </p>
