@@ -91,14 +91,6 @@ const AI_PROVIDERS: AIProviders = {
       });
     }
   }
-  // Add more AI providers here as needed
-  // Example:
-  // anthropic: {
-  //   apiUrl: 'https://api.anthropic.com/v1/complete',
-  //   headers: {...},
-  //   formatRequest: (prompt: string) => ({...}),
-  //   parseResponse: (response: any) => ...
-  // }
 };
 
 // Style descriptions mapping
@@ -135,11 +127,13 @@ async function generateWithAI(prompt: string, provider = 'kieai') {
   }
 }
 
+type SupportedLanguage = 'en' | 'zh' | 'ja' | 'ko';
+
 export async function POST(req: NextRequest) {
   try {
-    const { firstName, secondName, style, shipType } = await req.json();
+    const { firstName, secondName, style, shipType, language } = await req.json();
 
-    if (!firstName || !secondName || !style || !shipType) {
+    if (!firstName || !secondName || !style || !shipType || !language) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -148,26 +142,57 @@ export async function POST(req: NextRequest) {
 
     const styleDescription = STYLE_DESCRIPTIONS[style as keyof typeof STYLE_DESCRIPTIONS] || 'unique and creative';
 
-    const prompt = `Generate 5 ${styleDescription} ship name for a ${shipType} inspired by "${firstName}" and "${secondName}", with explicit semantic interpretation.
+    const languagePrompts: Record<SupportedLanguage, {
+      suffix: string;
+      readingEase: string;
+      morphemes: string;
+    }> = {
+      en: {
+        suffix: "e.g., -ia/-is/-on for research vessels",
+        readingEase: "Flesch formula",
+        morphemes: "2-3 morphemes"
+      },
+      zh: {
+        suffix: "例如：-号/-轮/-舰 用于不同类型船只",
+        readingEase: "通顺度评分",
+        morphemes: "2-4个字"
+      },
+      ja: {
+        suffix: "例：-丸/-号/-船 など、船舶の種類に応じて",
+        readingEase: "読みやすさスコア",
+        morphemes: "2-4文字"
+      },
+      ko: {
+        suffix: "예: -호/-선/-함 등 선박 유형에 따라",
+        readingEase: "가독성 점수",
+        morphemes: "2-4음절"
+      }
+    };
+
+    const langConfig = languagePrompts[language as SupportedLanguage] || languagePrompts.en;
+
+    const prompt = `Generate 5 ${styleDescription} ship names for a ${shipType} inspired by "${firstName}" and "${secondName}" in ${language} language, with explicit semantic interpretation.
 
 Core requirements:
 1. Name construction:
-   - Morphological blend ratio ≥60% (neologism formation)
+   - Create names that sound natural in ${language} language
    - Phonosemantic alignment with ${styleDescription}
-   - Ship-class suffix patterns (e.g., -ia/-is/-on for research vessels)
+   - Ship-class suffix patterns (${langConfig.suffix})
 
 2. Semantic guidelines:
-   - Bilateral etymology (reflect both source names)
+   - Incorporate elements from both source names ("${firstName}" and "${secondName}")
    - ${shipType}-specific symbolism
    - Style-encoded semantics (${styleDescription})
+   - Cultural relevance to ${language}-speaking regions
 
 3. Output specs:
-   - Lexical length: 2-3 morphemes
-   - Reading ease score ≥80 (Flesch formula)
-   - Maritime semantic compatibility index >0.7
+   - Length: ${langConfig.morphemes}
+   - Reading ease score ≥80 (${langConfig.readingEase})
+   - Maritime semantic compatibility
+   - Names should feel authentic in ${language}
 
 Response format:
-["Generated Name"]|["Express the meaning in one sentence"]`;
+["Generated Name"]|["Express the meaning in one sentence in ${language}"]`;
 
     const results = await generateWithAI(prompt);
 

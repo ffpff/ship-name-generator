@@ -28,15 +28,35 @@
     "loading": "Generating...",
     "error": "An error occurred while generating names. Please try again.",
     "exampleTitle": "Example Names",
-    "exampleDescription": "Here are some examples of generated names:"
+    "exampleDescription": "Here are some examples of generated names:",
+    "customShipTypeLabel": "Custom Vessel Type",
+    "customShipTypePlaceholder": "Enter your vessel type"
   },
   "shipTypes": {
     "yacht": "Yacht",
     "sailboat": "Sailboat",
-    "fishingBoat": "Fishing Boat",
-    "cruiseShip": "Cruise Ship",
-    "cargoShip": "Cargo Ship",
-    "speedboat": "Speedboat"
+    "fishing-boat": "Fishing Boat",
+    "speedboat": "Speedboat",
+    "pontoon": "Pontoon",
+    "cruiser": "Cruiser",
+    "houseboat": "Houseboat",
+    "trawler": "Trawler",
+    "bowrider": "Bowrider",
+    "catamaran": "Catamaran",
+    "custom": "Custom"
+  },
+  "shipTypeDescriptions": {
+    "yacht": "Luxury recreational vessel",
+    "sailboat": "Wind-powered vessel for recreation",
+    "fishing-boat": "Commercial or recreational fishing vessel",
+    "speedboat": "High-performance recreational boat",
+    "pontoon": "Flat-bottomed recreational boat",
+    "cruiser": "Comfortable long-distance vessel",
+    "houseboat": "Live-aboard watercraft",
+    "trawler": "Long-range displacement vessel",
+    "bowrider": "Family-friendly day boat",
+    "catamaran": "Dual-hull stable vessel",
+    "custom": "Enter your own ship type"
   },
   "styles": {
     "romantic": "Romantic",
@@ -49,5 +69,46 @@
     "vintage": "Vintage",
     "coastal": "Coastal",
     "patriotic": "Patriotic"
-  }
+  },
+  "styleDescriptions": {
+    "romantic": "Perfect for couples celebrating their love",
+    "adventure": "For the thrill-seekers and explorers",
+    "luxury": "Elegant and sophisticated vessel names",
+    "nautical": "Traditional maritime-themed names",
+    "humorous": "Fun and witty names with a touch of humor",
+    "mythology": "Names inspired by gods and legendary figures",
+    "nature": "Inspired by the beauty of the natural world",
+    "vintage": "Classic and timeless vessel names",
+    "coastal": "Celebrating coastal towns and shores",
+    "patriotic": "Proud American-themed vessel names"
+  },
+  "exampleNames": [
+    {
+      "name": "Joralis",
+      "meaning": "A harmonious blend of John and Sarah, evoking the serenity of ocean waves and coastal living"
+    },
+    {
+      "name": "Sarohnia",
+      "meaning": "Merging Sarah and John into a melodic houseboat name that embodies tidal rhythms and aquatic tranquility"
+    },
+    {
+      "name": "Jonarith",
+      "meaning": "Combining John and Sarah with 'maritime' to create a name that suggests gentle currents and floating harmony"
+    },
+    {
+      "name": "Salijon",
+      "meaning": "Fusing Sarah and John into a flowing name that mirrors the peaceful drift of a houseboat on calm waters"
+    },
+    {
+      "name": "Harborohn",
+      "meaning": "Blending 'harbor' with John and Sarah, symbolizing safe anchorage and coastal serenity"
+    }
+  ],
+  "loadingMessages": [
+    "Setting sail...",
+    "Finding the perfect names...",
+    "Drawing inspiration from the ocean...",
+    "Consulting with Poseidon...",
+    "Charting the course..."
+  ]
 } 

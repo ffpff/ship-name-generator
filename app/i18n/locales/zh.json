@@ -28,15 +28,35 @@
     "loading": "正在生成...",
     "error": "生成过程中出现错误，请重试",
     "exampleTitle": "示例船名",
-    "exampleDescription": "以下是一些生成的名字示例："
+    "exampleDescription": "以下是一些生成的名字示例：",
+    "customShipTypeLabel": "自定义船只类型",
+    "customShipTypePlaceholder": "请输入您的船只类型"
   },
   "shipTypes": {
     "yacht": "游艇",
     "sailboat": "帆船",
-    "fishingBoat": "渔船",
-    "cruiseShip": "邮轮",
-    "cargoShip": "货船",
-    "speedboat": "快艇"
+    "fishing-boat": "渔船",
+    "speedboat": "快艇",
+    "pontoon": "浮筒船",
+    "cruiser": "巡航艇",
+    "houseboat": "船屋",
+    "trawler": "拖网渔船",
+    "bowrider": "船首骑乘艇",
+    "catamaran": "双体船",
+    "custom": "自定义"
+  },
+  "shipTypeDescriptions": {
+    "yacht": "豪华休闲船只",
+    "sailboat": "风力驱动的休闲船只",
+    "fishing-boat": "商业或休闲钓鱼船只",
+    "speedboat": "高性能休闲快艇",
+    "pontoon": "平底休闲船",
+    "cruiser": "舒适的远航船只",
+    "houseboat": "水上居住船只",
+    "trawler": "长航程排水船",
+    "bowrider": "适合家庭的日间游船",
+    "catamaran": "稳定的双体船",
+    "custom": "输入您自己的船只类型"
   },
   "styles": {
     "romantic": "浪漫",
@@ -49,5 +69,46 @@
     "vintage": "复古",
     "coastal": "海岸",
     "patriotic": "爱国"
-  }
+  },
+  "styleDescriptions": {
+    "romantic": "完美适合庆祝爱情的伴侣",
+    "adventure": "为寻求刺激和探险者准备",
+    "luxury": "优雅而精致的船只名称",
+    "nautical": "传统的航海主题名称",
+    "humorous": "充满趣味和智慧的幽默名称",
+    "mythology": "灵感来自神话和传说人物",
+    "nature": "源于自然世界之美",
+    "vintage": "经典永恒的船只名称",
+    "coastal": "致敬海岸城镇和海滨",
+    "patriotic": "充满爱国情怀的主题名称"
+  },
+  "exampleNames": [
+    {
+      "name": "海韵天成",
+      "meaning": "融合了海洋的韵律与天然的和谐，象征着平静的海浪和沿海生活的宁静"
+    },
+    {
+      "name": "云帆之梦",
+      "meaning": "将云和帆船的意象结合，展现出水上生活的优雅与梦幻"
+    },
+    {
+      "name": "海天一舟",
+      "meaning": "描绘海天相接处的一叶扁舟，暗示着无限的可能与自由"
+    },
+    {
+      "name": "浪漫之航",
+      "meaning": "象征着一段充满浪漫与冒险的水上旅程"
+    },
+    {
+      "name": "港湾之星",
+      "meaning": "结合港湾的安全与星辰的指引，寓意着安全的停泊与光明的方向"
+    }
+  ],
+  "loadingMessages": [
+    "扬帆起航...",
+    "寻找完美名字...",
+    "汲取海洋灵感...",
+    "请教海神波塞冬...",
+    "规划航线..."
+  ]
 } 

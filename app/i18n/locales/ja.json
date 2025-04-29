@@ -28,15 +28,35 @@
     "loading": "生成中...",
     "error": "エラーが発生しました。もう一度お試しください",
     "exampleTitle": "名前の例",
-    "exampleDescription": "生成された名前の例をご紹介します："
+    "exampleDescription": "生成された名前の例をご紹介します：",
+    "customShipTypeLabel": "カスタム船舶タイプ",
+    "customShipTypePlaceholder": "船舶タイプを入力してください"
   },
   "shipTypes": {
     "yacht": "ヨット",
     "sailboat": "帆船",
-    "fishingBoat": "漁船",
-    "cruiseShip": "クルーズ船",
-    "cargoShip": "貨物船",
-    "speedboat": "スピードボート"
+    "fishing-boat": "漁船",
+    "speedboat": "スピードボート",
+    "pontoon": "ポンツーンボート",
+    "cruiser": "クルーザー",
+    "houseboat": "ハウスボート",
+    "trawler": "トロール船",
+    "bowrider": "バウライダー",
+    "catamaran": "カタマラン",
+    "custom": "カスタム"
+  },
+  "shipTypeDescriptions": {
+    "yacht": "高級レジャーボート",
+    "sailboat": "風力で動くレジャーボート",
+    "fishing-boat": "商業用または遊漁船",
+    "speedboat": "高性能レジャーボート",
+    "pontoon": "平底レジャーボート",
+    "cruiser": "快適な長距離航行船",
+    "houseboat": "居住用水上船舶",
+    "trawler": "長距離航行排水量型船舶",
+    "bowrider": "ファミリー向けデイボート",
+    "catamaran": "双胴の安定した船舶",
+    "custom": "独自の船舶タイプを入力"
   },
   "styles": {
     "romantic": "ロマンチック",
@@ -49,5 +69,46 @@
     "vintage": "ビンテージ",
     "coastal": "コースタル",
     "patriotic": "愛国"
-  }
+  },
+  "styleDescriptions": {
+    "romantic": "愛を祝福するカップルに最適",
+    "adventure": "スリルと冒険を求める方々に",
+    "luxury": "優雅で洗練された船名",
+    "nautical": "伝統的な海洋テーマの名前",
+    "humorous": "ユーモアのセンスが光る楽しい名前",
+    "mythology": "神々と伝説の人物からインスピレーション",
+    "nature": "自然界の美しさからインスピレーション",
+    "vintage": "クラシックで時を超えた船名",
+    "coastal": "沿岸の町と海辺を讃える",
+    "patriotic": "愛国心あふれるテーマの名前"
+  },
+  "exampleNames": [
+    {
+      "name": "海風の調べ",
+      "meaning": "海の波と沿岸の暮らしの静けさを表現した、穏やかな響きの名前"
+    },
+    {
+      "name": "夢帆",
+      "meaning": "潮のリズムと水上の静けさを体現した、メロディックな名前"
+    },
+    {
+      "name": "波光る",
+      "meaning": "穏やかな潮流と浮かぶ調和を表現した海洋テーマの名前"
+    },
+    {
+      "name": "潮風の詩",
+      "meaning": "穏やかな水面を漂う様子を映し出す、流れるような名前"
+    },
+    {
+      "name": "港の星",
+      "meaning": "安全な停泊と沿岸の静けさを象徴する、港と星を組み合わせた名前"
+    }
+  ],
+  "loadingMessages": [
+    "出航準備中...",
+    "完璧な名前を探しています...",
+    "海からインスピレーションを得ています...",
+    "ポセイドンに相談中...",
+    "航路を設定中..."
+  ]
 } 

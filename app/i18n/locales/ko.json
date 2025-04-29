@@ -28,15 +28,35 @@
     "loading": "생성 중...",
     "error": "오류가 발생했습니다. 다시 시도해주세요",
     "exampleTitle": "이름 예시",
-    "exampleDescription": "생성된 이름의 예시입니다:"
+    "exampleDescription": "생성된 이름의 예시입니다:",
+    "customShipTypeLabel": "사용자 정의 선박 유형",
+    "customShipTypePlaceholder": "선박 유형을 입력하세요"
   },
   "shipTypes": {
     "yacht": "요트",
     "sailboat": "범선",
-    "fishingBoat": "어선",
-    "cruiseShip": "크루즈선",
-    "cargoShip": "화물선",
-    "speedboat": "스피드보트"
+    "fishing-boat": "어선",
+    "speedboat": "스피드보트",
+    "pontoon": "폰툰보트",
+    "cruiser": "크루저",
+    "houseboat": "하우스보트",
+    "trawler": "트롤선",
+    "bowrider": "바우라이더",
+    "catamaran": "쌍동선",
+    "custom": "사용자 정의"
+  },
+  "shipTypeDescriptions": {
+    "yacht": "고급 레저 선박",
+    "sailboat": "풍력으로 움직이는 레저 선박",
+    "fishing-boat": "상업용 또는 레저용 낚시 선박",
+    "speedboat": "고성능 레저 보트",
+    "pontoon": "평저 레저 보트",
+    "cruiser": "편안한 장거리 선박",
+    "houseboat": "수상 거주용 선박",
+    "trawler": "장거리 배수량형 선박",
+    "bowrider": "가족 친화적 데이보트",
+    "catamaran": "쌍동선체 안정 선박",
+    "custom": "직접 선박 유형 입력"
   },
   "styles": {
     "romantic": "로맨틱",
@@ -49,5 +69,46 @@
     "vintage": "빈티지",
     "coastal": "해안",
     "patriotic": "애국"
-  }
+  },
+  "styleDescriptions": {
+    "romantic": "사랑을 축하하는 커플들을 위한 완벽한 선택",
+    "adventure": "스릴과 모험을 추구하는 분들을 위한",
+    "luxury": "우아하고 세련된 선박 이름",
+    "nautical": "전통적인 해양 테마 이름",
+    "humorous": "유머러스하고 재치있는 이름",
+    "mythology": "신화와 전설적 인물에서 영감을 받은",
+    "nature": "자연의 아름다움에서 영감을 받은",
+    "vintage": "클래식하고 시대를 초월한 선박 이름",
+    "coastal": "해안 도시와 해변을 기념하는",
+    "patriotic": "애국심이 넘치는 테마의 이름"
+  },
+  "exampleNames": [
+    {
+      "name": "파도의 노래",
+      "meaning": "바다 파도와 해안 생활의 평온함을 담아낸 조화로운 이름"
+    },
+    {
+      "name": "꿈의 항해",
+      "meaning": "조수의 리듬과 수상의 평온함을 담은 선율적인 이름"
+    },
+    {
+      "name": "바다의 숨결",
+      "meaning": "잔잔한 해류와 부유하는 조화를 표현한 해양 테마 이름"
+    },
+    {
+      "name": "파랑의 꿈",
+      "meaning": "잔잔한 수면을 떠다니는 모습을 반영한 흐르는 듯한 이름"
+    },
+    {
+      "name": "항구의 별",
+      "meaning": "안전한 정박과 해안의 평화를 상징하는, 항구와 별을 결합한 이름"
+    }
+  ],
+  "loadingMessages": [
+    "출항 준비 중...",
+    "완벽한 이름을 찾는 중...",
+    "바다에서 영감을 얻는 중...",
+    "포세이돈과 상담 중...",
+    "항로를 설정하는 중..."
+  ]
 } 

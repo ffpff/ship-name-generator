@@ -8,48 +8,24 @@ interface GeneratedName {
   meaning: string;
 }
 
-// Example names for inspiration
-const EXAMPLE_NAMES: GeneratedName[] = [
-  {
-    name: "Joralis",
-    meaning: "A harmonious blend of John and Sarah, evoking the serenity of ocean waves and coastal living"
-  },
-  {
-    name: "Sarohnia",
-    meaning: "Merging Sarah and John into a melodic houseboat name that embodies tidal rhythms and aquatic tranquility"
-  },
-  {
-    name: "Jonarith",
-    meaning: "Combining John and Sarah with 'maritime' to create a name that suggests gentle currents and floating harmony"
-  },
-  {
-    name: "Salijon",
-    meaning: "Fusing Sarah and John into a flowing name that mirrors the peaceful drift of a houseboat on calm waters"
-  },
-  {
-    name: "Harborohn",
-    meaning: "Blending 'harbor' with John and Sarah, symbolizing safe anchorage and coastal serenity"
-  }
-];
-
-// Ship name style options
-const STYLE_OPTIONS = [
-  { id: 'romantic', label: 'Romantic', description: 'Perfect for couples celebrating their love' },
-  { id: 'adventure', label: 'Adventure', description: 'For the thrill-seekers and explorers' },
-  { id: 'luxury', label: 'Luxury', description: 'Elegant and sophisticated vessel names' },
-  { id: 'nautical', label: 'Nautical', description: 'Traditional maritime-themed names' },
-  { id: 'humorous', label: 'Humorous', description: 'Fun and witty names with a touch of humor' },
-  { id: 'mythology', label: 'Mythology', description: 'Names inspired by gods and legendary figures' },
-  { id: 'nature', label: 'Nature', description: 'Inspired by the beauty of the natural world' },
-  { id: 'vintage', label: 'Vintage', description: 'Classic and timeless vessel names' },
-  { id: 'coastal', label: 'Coastal', description: 'Celebrating coastal towns and shores' },
-  { id: 'patriotic', label: 'Patriotic', description: 'Proud American-themed vessel names' },
-];
-
 interface Props {
   lang: string;
   messages: any;
 }
+
+// Ship name style options
+const STYLE_OPTIONS = [
+  { id: 'romantic' },
+  { id: 'adventure' },
+  { id: 'luxury' },
+  { id: 'nautical' },
+  { id: 'humorous' },
+  { id: 'mythology' },
+  { id: 'nature' },
+  { id: 'vintage' },
+  { id: 'coastal' },
+  { id: 'patriotic' },
+];
 
 export default function NameGeneratorForm({ lang, messages }: Props) {
   const [firstName, setFirstName] = useState('');
@@ -64,14 +40,6 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
   const [loadingMessage, setLoadingMessage] = useState('');
   const [showExamples, setShowExamples] = useState(false);
 
-  const loadingMessages = [
-    "Setting sail...",
-    "Finding the perfect names...",
-    "Drawing inspiration from the ocean...",
-    "Consulting with Poseidon...",
-    "Charting the course..."
-  ];
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -83,8 +51,8 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
     // Start loading message cycle
     let messageIndex = 0;
     const messageInterval = setInterval(() => {
-      setLoadingMessage(loadingMessages[messageIndex]);
-      messageIndex = (messageIndex + 1) % loadingMessages.length;
+      setLoadingMessage(messages.loadingMessages[messageIndex]);
+      messageIndex = (messageIndex + 1) % messages.loadingMessages.length;
     }, 2000);
     
     try {
@@ -207,7 +175,7 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
               <option value="">{messages.home.shipTypePlaceholder}</option>
               {SHIP_TYPES.map((type) => (
                 <option key={type.value} value={type.value}>
-                  {type.label} - {type.description}
+                  {messages.shipTypes[type.value]} - {messages.shipTypeDescriptions[type.value]}
                 </option>
               ))}
             </select>
@@ -215,7 +183,7 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
             {selectedShipType === 'custom' && (
               <div className="mt-3">
                 <label htmlFor="customShipType" className="block text-sm font-medium text-gray-700 mb-1">
-                  Custom Vessel Type
+                  {messages.home.customShipTypeLabel}
                 </label>
                 <input
                   id="customShipType"
@@ -223,7 +191,7 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
                   className="input-field"
                   value={customShipType}
                   onChange={(e) => setCustomShipType(e.target.value)}
-                  placeholder="Enter your vessel type"
+                  placeholder={messages.home.customShipTypePlaceholder}
                   required={selectedShipType === 'custom'}
                   disabled={isLoading}
                 />
@@ -259,10 +227,10 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
                     disabled={isLoading}
                   />
                   <label htmlFor={style.id} className="ml-3 block text-sm font-medium text-gray-700">
-                    {style.label}
+                    {messages.styles[style.id]}
                   </label>
                 </div>
-                <p className="mt-1 text-xs text-gray-500 ml-7">{style.description}</p>
+                <p className="mt-1 text-xs text-gray-500 ml-7">{messages.styleDescriptions[style.id]}</p>
               </div>
             ))}
           </div>
@@ -302,7 +270,7 @@ export default function NameGeneratorForm({ lang, messages }: Props) {
             <h3 className="text-lg font-medium text-gray-700 mb-2">{messages.home.exampleTitle}</h3>
             <p className="text-sm text-gray-500">{messages.home.exampleDescription}</p>
           </div>
-          {renderNamesList(EXAMPLE_NAMES, true)}
+          {renderNamesList(messages.exampleNames, true)}
         </div>
       )}
 
