@@ -32,7 +32,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // 只匹配需要国际化的页面路径
-    '/((?!api|_next|favicon.ico).*)',
+    // 排除 Google 验证文件和其他静态资源
+    '/((?!api|_next|favicon.ico|googlea023cd55c25bf58a.html|robots.txt|sitemap.xml).*)',
   ],
 } 
