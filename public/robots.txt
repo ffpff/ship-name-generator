@@ -1,4 +1,6 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://shipnamegenerator.com/sitemap.xml 
+Sitemap: https://www.aishipnamegenerator.org/sitemap.xml 
